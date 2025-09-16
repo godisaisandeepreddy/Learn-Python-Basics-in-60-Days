@@ -73,7 +73,29 @@
     - **Jupyter Notebook** (For data science)
         
 - For beginners → **VS Code + Python extension** is good.
-    
+
+Why IDE?
+* Linting
+* Debugging
+* Autocomplete
+* Code Formatting (PEP8)
+
+Install Either Anaconda or Miniconda
+
+Create Environment:
+### Create a new environment with a specific Python version
+
+conda create -n myenv python=3.11
+
+#### Activate the environment
+conda activate myenv
+
+#### Install a package
+conda install numpy
+
+#### List environments
+conda env list
+
 
 ---
 
@@ -110,7 +132,7 @@ python3
 - Example:
     
     ```python
-    >>> 2 + 3
+    >>> 	2 + 3
     5
     >>> "Python".upper()
     'PYTHON'
@@ -213,6 +235,92 @@ if True:
 
 ---
 
-✅ By end of Day 1 → You can install Python, run scripts, use comments, take input/output, and understand variables & indentation.
+
+## Types of Errors
+
+---
+
+
+# 🔹 1. **Syntax Errors**
+
+- Happen when you **break the grammar rules** of Python.
+    
+- Python **won’t even run** your code.
+    
+- Detected **before execution** by the Python parser.
+    
+
+✅ Example:
+
+```python
+print("Hello"  # Missing closing parenthesis
+```
+
+Output:
+
+```
+SyntaxError: unexpected EOF while parsing
+```
+
+---
+
+# 🔹 2. **Runtime Errors (Exceptions)**
+
+- Code is **syntactically valid**, but something goes wrong **while running**.
+    
+- Python raises an **exception** at runtime.
+    
+- Common examples: division by zero, accessing missing files, wrong data type.
+    
+
+✅ Example:
+
+```python
+x = 10 / 0   # Division by zero at runtime
+```
+
+Output:
+
+```
+ZeroDivisionError: division by zero
+```
+
+---
+
+# 🔹 3. **Logical Errors**
+
+- Code **runs without crashing**, but the **result is wrong**.
+    
+- Hardest to detect because Python doesn’t warn you — only your output is incorrect.
+    
+- Happens due to a mistake in your **algorithm or logic**.
+    
+
+✅ Example:
+
+```python
+# Suppose you want the average of 3 numbers
+nums = [10, 20, 30]
+avg = sum(nums) / 2   # ❌ wrong denominator
+print(avg)
+```
+
+Output:
+
+```
+30.0
+```
+
+Expected result was `20.0`. The program runs fine, but logic is incorrect.
+
+---
+
+# 🔹 Quick Summary
+
+|Type of Error|When it Happens|Example|Python Reaction|
+|---|---|---|---|
+|**Syntax Error**|Before running|`print("hi`|Fails immediately|
+|**Runtime Error**|During running|`10/0`|Raises exception|
+|**Logical Error**|After running|Wrong avg formula|Wrong output|
 
 ---
